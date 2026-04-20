@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Sidebars / panels */
+  .glass-panel {
+    @apply bg-zinc-950 backdrop-blur-md border border-zinc-800;
+  }
+
+  /* Canvas node card */
+  .node-base {
+    @apply relative px-4 py-3 rounded-2xl border border-zinc-700/60 bg-zinc-900
+           min-w-[220px] flex items-center gap-3 transition-all duration-200 cursor-grab
+           shadow-xl shadow-black/50
+           hover:shadow-2xl hover:shadow-black/60 hover:border-zinc-600;
+  }
+
+  .node-base:active {
+    @apply cursor-grabbing;
+  }
+
+  .node-base.selected {
+    @apply ring-2 ring-white/20 ring-offset-2 ring-offset-zinc-950 border-zinc-500 shadow-2xl;
+  }
+
+  /* Form elements inside config panel */
+  .form-label {
+    @apply block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-1.5;
+  }
+
+  .form-input {
+    @apply w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100
+           placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-white/10
+           focus:border-zinc-500 transition-all;
+  }
+
+  .form-select {
+    @apply w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100
+           focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-500
+           transition-all appearance-none cursor-pointer;
+  }
+
+  .animate-pop {
+    animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ─── React Flow overrides ────────────────────────────────────────── */
+.react-flow__handle {
+  @apply w-2.5 h-2.5 border-2 border-zinc-950 bg-zinc-600 rounded-full transition-all duration-150;
+}
+
+.react-flow__handle:hover {
+  @apply bg-zinc-300 scale-125;
+}
+
+.react-flow__edge-path {
+  stroke: #3f3f46;
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #a1a1aa;
+  stroke-width: 2.5;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+/* Floating zoom-control pill — dark, blurred, right-edge vertical pill */
+.react-flow__controls {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  background: rgba(24,24,27,0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(63,63,70,0.8) !important;
+  border-radius: 9999px !important;
+  padding: 4px !important;
+  bottom: auto !important;
+  top: 50% !important;
+  left: auto !important;
+  right: 24px !important;
+  transform: translateY(-50%) !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5) !important;
+}
+
+.react-flow__controls-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 9999px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  fill: #a1a1aa !important;
+  transition: background 0.15s, fill 0.15s !important;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(63,63,70,0.7) !important;
+  fill: #fafafa !important;
+}
+
+.react-flow__controls-button svg {
+  fill: inherit;
+}
