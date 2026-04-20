@@ -2,11 +2,11 @@
 
 **Applicant:** Siddhant Jain
 **Role:** Full Stack Engineering Intern (AI Agentic Platforms) — Tredence Studio
-**Timebox:** 4–6 Hours
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-8A2BE2?style=for-the-badge)](https://tredence-hr-workflow-designer.netlify.app/)
 
 > **Note to Reviewers:** To eliminate setup friction, I highly recommend viewing the **Live Demo** linked above. API keys are securely managed in the deployment environment.
+> https://tredence-hr-workflow-designer.netlify.app/
 
 ---
 
