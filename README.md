@@ -5,7 +5,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-8A2BE2?style=for-the-badge)](https://tredence-hr-workflow-designer.netlify.app/)
 
-> **Note to Reviewers:** To eliminate setup friction, I highly recommend viewing the **Live Demo** linked above. API keys are securely managed in the deployment environment.
+> **Note to Reviewers:** To eliminate setup friction, I highly recommend viewing the **Live Demo** linked above or click the link below.
 > https://tredence-hr-workflow-designer.netlify.app/
 
 ---
